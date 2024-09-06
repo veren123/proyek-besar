@@ -1,0 +1,375 @@
+/* Base Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo h2 {
+    margin: 0;
+    color: #00ffff; /* Neon cyan */
+    text-shadow: 0 0 10px #00ffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icons i {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    color: #ff9900; /* Neon orange when hovered */
+}
+
+/* Light mode styles */
+.light-mode {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #111;
+    color: #00ffff; /* Neon cyan */
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: #00ffff;
+    color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Cards Container */
+.card-container {
+    display: flex;
+    justify-content: center; /* Center align cards horizontally */
+    align-items: center; /* Center align cards vertically */
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    padding: 20px;
+    gap: 15px; /* Space between cards */
+}
+
+/* Card Styling */
+.card {
+    background: linear-gradient(145deg, #222, #333); /* Dark gradient background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.2), 0 0 15px rgba(255, 0, 255, 0.2); /* Cyberpunk neon glow */
+    padding: 15px;
+    text-align: center;
+    width: 300px; /* Default width for desktop */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative; /* For the neon borders */
+    overflow: hidden; /* Hide the extra glow effects */
+}
+
+/* Neon Border for Cards */
+.card:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5));
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover:before {
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.5), 0 0 25px rgba(0, 255, 255, 0.5); /* Stronger neon glow on hover */
+}
+
+.card img {
+    max-width: 100%; /* Ensure image fits within card */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 18px; /* Default font size for desktop */
+    color: #ff00ff; /* Neon pink heading */
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+.card p {
+    color: #00ffff; /* Neon cyan text */
+    font-size: 14px; /* Default font size for desktop */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* Hover effect on cards */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.4), 0 0 20px rgba(255, 0, 255, 0.5); /* Enhanced neon effect */
+}
+
+.card img:hover {
+    transform: scale(1.05); /* Slight zoom on image */
+}
+
+/* Banner Styling */
+.banner {
+    text-align: center;
+    padding: 60px 20px; /* Adjust padding for better fit on mobile */
+    background: linear-gradient(135deg, #282828, #333);
+    color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+/* Styling for the typing effect */
+.banner h1 {
+    font-size: 36px; /* Adjust font size for smaller screens */
+    margin-bottom: 10px;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+    font-weight: 700;
+    white-space: nowrap; /* Keeps text on a single line */
+    overflow: hidden; /* Hides text that has not been typed yet */
+}
+
+/* Styling for the paragraph */
+.banner p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    color: red;
+}
+
+/* Dropdown Container */
+.dropdown-alt {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn-alt {
+    background-color: #111; /* Dark background for contrast */
+    border: none;
+    color: #00ffff; /* Neon cyan */
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3); /* Neon cyan shadow */
+    position: relative; /* For the neon border effect */
+}
+
+/* Neon Border for Button */
+.dropbtn-alt:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: #00ffff; /* Neon cyan background */
+    z-index: -1;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* Neon cyan glow */
+}
+
+.dropbtn-alt:hover:before {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Stronger neon glow on hover */
+}
+
+/* Dropdown Content */
+.dropdown-content-alt {
+    display: none;
+    position: absolute;
+    background-color: #222; /* Darker background for dropdown */
+    min-width: 220px; /* Set a fixed width */
+    max-height: 300px; /* Set a maximum height */
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 255, 255, 0.3); /* Neon cyan shadow */
+    z-index: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow-y: auto; /* Add scroll if content exceeds max-height */
+    transform: translateY(10px); /* Initial drop effect */
+}
+
+/* Dropdown Links */
+.dropdown-content-alt a {
+    color: #00ffff; /* Neon cyan text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #444; /* Divider lines */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on dropdown links */
+.dropdown-content-alt a:hover {
+    background-color: rgba(0, 255, 255, 0.2); /* Slight neon cyan background on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown-alt:hover .dropdown-content-alt {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Reveal dropdown */
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .card-container {
+        padding: 10px;
+    }
+
+    .card {
+        width: 250px; /* Adjust card width for larger tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        padding: 40px 10px; /* Adjust padding for tablets and smaller devices */
+    }
+
+    .banner h1 {
+        font-size: 28px; /* Adjust font size for tablets */
+    }
+
+    .banner p {
+        font-size: 14px; /* Adjust font size for tablets */
+    }
+
+    .card-container {
+        flex-direction: row; /* Keep horizontal layout */
+        flex-wrap: nowrap; /* Prevent wrapping on tablets */
+        padding: 10px;
+    }
+
+    .card {
+        width: 220px; /* Adjust card width for tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: row; /* Ensure horizontal layout on small screens */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        padding: 5px;
+    }
+
+    .card {
+        width: 180px; /* Adjust card width for mobile */
+    }
+
+    .card h3 {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+
+    .card p {
+        font-size: 12px; /* Smaller text on mobile */
+    }
+
+    .card img {
+        max-width: 80%; /* Reduce image size further for mobile */
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo h2 {
+        font-size: 24px;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+
+    .dropbtn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .dropdown-content a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .banner {
+        padding: 20px 10px; /* Adjust padding for mobile phones */
+    }
+
+    .banner h1 {
+        font-size: 24px; /* Adjust font size for mobile phones */
+    }
+
+    .banner p {
+        font-size: 12px; /* Adjust font size for mobile phones */
+    }
+}
